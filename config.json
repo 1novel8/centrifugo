@@ -1,0 +1,47 @@
+{
+  "client": {
+    "proxy": {
+      "connect": {
+        "enabled": true,
+        "endpoint": "http://host.docker.internal:5005/events/connection",
+        "http_headers": [
+          "Cookie",
+          "Origin",
+          "User-Agent",
+          "Authorization",
+          "x-user"
+        ]
+      }
+    },
+    "ping_interval": "8s",
+    "pong_timeout": "2s",
+    "allowed_origins": [
+      "*"
+    ]
+  },
+  "http_api": {
+    "key": "http_api_key"
+  },
+  "admin": {
+    "password": "admin_password",
+    "secret": "admin_secret",
+    "enabled": true
+  },
+  "channel": {
+    "proxy": {
+      "subscribe": {
+        "endpoint": "http://host.docker.internal:5005/events/subscribe"
+      }
+    },
+    "namespaces": [
+      {
+        "name": "girls",
+        "subscribe_proxy_enabled": true
+      },
+      {
+        "name": "boys",
+        "subscribe_proxy_enabled": true
+      }
+    ]
+  }
+}
